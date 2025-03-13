@@ -24,10 +24,12 @@ class CreateUsersTable
             )
         ");
         $stmt->execute();
+        $stmt->close();
     }
 
     public function down() {
         $stmt = $this->mysqli->prepare("DROP TABLE IF EXISTS users");
         $stmt->execute();
+        $stmt->close();
     }
 }
